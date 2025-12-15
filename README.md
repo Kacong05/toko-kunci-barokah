@@ -1,59 +1,244 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔑 Toko Kunci Barokah
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem manajemen toko kunci berbasis web dengan Laravel 12 dan Tailwind CSS.
 
-## About Laravel
+## ✨ Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### User
+- 🏠 Dashboard dengan informasi lengkap
+- 📦 Pemesanan layanan kunci
+- ⭐ Rating & Review
+- 💬 Kontak form
+- 🗺️ Lokasi toko dengan maps
+- 🌓 Dark mode support
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Admin
+- 📊 Dashboard dengan statistik
+- 👥 Manajemen user
+- 📋 Manajemen pesanan
+- ⭐ Manajemen rating
+- 📧 Manajemen pesan kontak
+- 🔔 Sistem notifikasi real-time
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+- **Backend**: Laravel 12
+- **Frontend**: Blade Templates, Alpine.js, Tailwind CSS
+- **Database**: MySQL
+- **Maps**: Leaflet.js
+- **Icons**: Heroicons
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📋 Requirements
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.2+
+- Composer
+- Node.js 18+
+- MySQL 8.0+
 
-## Laravel Sponsors
+## 🚀 Installation (Local)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clone Repository
+```bash
+git clone https://github.com/username/toko-kunci-barokah.git
+cd toko-kunci-barokah
+```
 
-### Premium Partners
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 3. Environment Setup
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Contributing
+### 4. Database Setup
+Update `.env` dengan kredensial database Anda:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=toko_kunci_barokah
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 5. Run Migrations & Seeders
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-## Code of Conduct
+### 6. Build Assets
+```bash
+npm run build
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 7. Start Development Server
+```bash
+php artisan serve
+```
 
-## Security Vulnerabilities
+Buka browser: `http://localhost:8000`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 👤 Default Login
 
-## License
+### Admin
+- Email: `admin@tokokuncibarokah.com`
+- Password: `admin123`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### User
+- Daftar melalui halaman register
+
+## 🌐 Deploy ke Railway
+
+Lihat panduan lengkap di [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### Quick Deploy
+1. Push ke GitHub
+2. Connect ke Railway
+3. Add MySQL database
+4. Set environment variables
+5. Deploy!
+
+## 📁 Struktur Project
+
+```
+toko-kunci-barokah/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/          # Admin controllers
+│   │   ├── Auth/           # Authentication
+│   │   ├── ContactController.php
+│   │   ├── PemesananController.php
+│   │   └── RatingController.php
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Order.php
+│   │   ├── Contact.php
+│   │   ├── Rating.php
+│   │   └── Notification.php
+│   └── Middleware/
+│       └── IsAdmin.php
+├── resources/
+│   ├── views/
+│   │   ├── admin/          # Admin views
+│   │   ├── auth/           # Auth views
+│   │   ├── layouts/        # Layouts
+│   │   ├── pemesanan/      # Order views
+│   │   ├── rating/         # Rating views
+│   │   └── dashboard.blade.php
+│   ├── css/
+│   └── js/
+├── routes/
+│   ├── web.php
+│   └── auth.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+└── public/
+```
+
+## 🎨 Fitur Unggulan
+
+### 1. Role-Based Access Control
+- User biasa: Dashboard, Pemesanan, Rating
+- Admin: Full access ke semua fitur
+
+### 2. Real-time Notifications
+- Notifikasi otomatis untuk pesanan baru
+- Notifikasi untuk pesan kontak
+- Notifikasi untuk rating baru
+
+### 3. Dark Mode
+- Sinkronisasi antar halaman
+- Tersimpan di localStorage
+- Smooth transition
+
+### 4. Responsive Design
+- Mobile-first approach
+- Optimized untuk semua device
+- Touch-friendly interface
+
+### 5. Interactive Maps
+- Leaflet.js integration
+- Custom marker
+- Popup dengan info toko
+
+## 🔧 Configuration
+
+### Email Setup (Production)
+Update `.env` dengan SMTP credentials:
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+MAIL_ENCRYPTION=tls
+```
+
+### Storage Setup
+```bash
+php artisan storage:link
+```
+
+## 📝 API Endpoints
+
+### Public Routes
+- `GET /` - Redirect to login
+- `GET /dashboard` - User dashboard
+- `GET /pemesanan` - Order page
+- `GET /rating` - Rating page
+
+### Admin Routes (Protected)
+- `GET /admin` - Admin dashboard
+- `GET /admin/orders` - Manage orders
+- `GET /admin/users` - Manage users
+- `GET /admin/ratings` - Manage ratings
+- `GET /admin/contacts` - Manage contacts
+
+## 🧪 Testing
+
+```bash
+php artisan test
+```
+
+## 📦 Build for Production
+
+```bash
+composer install --optimize-autoloader --no-dev
+npm run build
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+## 👨‍💻 Developer
+
+Developed with ❤️ by [Your Name]
+
+## 📞 Support
+
+Untuk bantuan dan pertanyaan:
+- Email: support@tokokuncibarokah.com
+- WhatsApp: +62 812-3456-7890
+
+---
+
+**Happy Coding! 🚀**
