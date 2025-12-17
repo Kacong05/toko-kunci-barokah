@@ -1,1 +1,1 @@
-web: bash -lc "(php artisan migrate --force || (sleep 5 && php artisan migrate --force)) && php artisan serve --host=0.0.0.0 --port=$PORT"
+web: php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=$PORT
