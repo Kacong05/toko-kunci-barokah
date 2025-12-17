@@ -16,27 +16,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin User
-        User::create([
-            'name' => 'Administrator',
-            'email' => 'admin@tokokuncibarokah.com',
-            'password' => Hash::make('admin123'),
-            'role' => 'admin',
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'admin@tokokuncibarokah.com'],
+            [
+                'name' => 'Administrator',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
+                'email_verified_at' => now(),
+            ],
+        );
 
-        // Create Regular User
-        User::create([
-            'name' => 'Test User',
-            'email' => 'user@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'user',
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'user@example.com'],
+            [
+                'name' => 'Test User',
+                'password' => Hash::make('password'),
+                'role' => 'user',
+                'email_verified_at' => now(),
+            ],
+        );
 
-        // Create additional users using factory
-        User::factory(5)->create([
-            'role' => 'user',
-        ]);
+        if (User::count() < 2) {
+            User::factory(5)->create([
+                'role' => 'user',
+            ]);
+        }
     }
 }
