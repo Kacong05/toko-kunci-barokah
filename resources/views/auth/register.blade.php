@@ -146,7 +146,7 @@
                         </label>
                         <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
-                            placeholder="08123456789">
+                            placeholder="085708770638">
                         <p class="mt-1 text-xs text-gray-500">Opsional, untuk memudahkan komunikasi</p>
                     </div>
 

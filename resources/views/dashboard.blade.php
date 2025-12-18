@@ -175,7 +175,7 @@
                             </div>
                             <div class="ml-4">
                                 <h4 class="text-lg font-semibold text-gray-900 dark:text-white">WhatsApp</h4>
-                                <a href="https://wa.me/6281234567890" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">+62 812-3456-7890</a>
+                                <a href="https://wa.me/6285708770638" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">+62 857-0877-0638</a>
                             </div>
                         </div>
 
